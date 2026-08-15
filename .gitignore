@@ -1,0 +1,6 @@
+.DS_Store
+
+# Never commit the resume PDF: it carries a phone number and email address
+# in both its text and its metadata, which is exactly what this site keeps off
+# the public internet.
+*.pdf

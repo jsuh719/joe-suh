@@ -1,0 +1,349 @@
+/* ==========================================================================
+   Joseph Suh — resume site
+   Two views share one stylesheet: the plain resume, and the jungle.
+   ========================================================================== */
+
+:root {
+  --jungle-900: #0b2c1c;
+  --jungle-800: #10402a;
+  --jungle-700: #17553a;
+  --jungle-500: #2f8a5b;
+  --ocean-800:  #0d3a52;
+  --ocean-600:  #14688f;
+  --ocean-400:  #3aa9c4;
+  --sand:       #f0dcae;
+  --ink:        #f4fbf6;
+  --ink-dim:    rgba(244, 251, 246, .74);
+  --ink-faint:  rgba(244, 251, 246, .52);
+  --rule:       rgba(244, 251, 246, .16);
+
+  --measure: 74ch;
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+
+  --dolly-ms: 700ms;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: clamp(16px, .55vw + 14px, 18px);
+  line-height: 1.6;
+  color: var(--ink);
+  background: linear-gradient(165deg, var(--jungle-900) 0%, var(--jungle-800) 42%, var(--ocean-800) 100%);
+  background-attachment: fixed;
+  min-height: 100dvh;
+}
+
+.wrap { width: min(100% - 2.5rem, 68rem); margin-inline: auto; }
+
+.skip {
+  position: absolute; left: -9999px; top: 0; z-index: 99;
+  background: var(--ink); color: var(--jungle-900);
+  padding: .6rem 1rem; border-radius: 0 0 .5rem 0; font-weight: 600;
+}
+.skip:focus { left: 0; }
+
+a { color: #9fe6c4; text-underline-offset: .18em; }
+a:hover { color: #c8f3de; }
+
+:where(a, button, [tabindex]):focus-visible {
+  outline: 3px solid #ffd977;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.view[hidden] { display: none; }
+
+/* ── buttons ─────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font: inherit; font-weight: 600;
+  padding: .68rem 1.15rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--rule);
+  background: rgba(255,255,255,.06);
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 160ms, border-color 160ms, transform 160ms;
+}
+.btn:hover { background: rgba(255,255,255,.13); border-color: rgba(255,255,255,.34); color: var(--ink); }
+.btn:active { transform: translateY(1px); }
+.btn--primary {
+  background: var(--jungle-500); border-color: transparent; color: #062315;
+}
+.btn--primary:hover { background: #3ba76e; color: #062315; }
+.btn--ghost { background: rgba(6,25,16,.55); backdrop-filter: blur(6px); }
+
+
+/* ==========================================================================
+   VIEW 1 — plain resume
+   ========================================================================== */
+
+.masthead { padding: clamp(2.5rem, 7vw, 5rem) 0 1.5rem; }
+.masthead__eyebrow {
+  margin: 0 0 .35rem; text-transform: uppercase; letter-spacing: .16em;
+  font-size: .74rem; font-weight: 700; color: var(--ink-faint);
+}
+.masthead__name {
+  margin: 0; font-size: clamp(2.4rem, 7vw, 4rem); line-height: 1.02;
+  letter-spacing: -.02em; font-weight: 800;
+}
+.masthead__headline {
+  margin: .5rem 0 0; font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: #9fe6c4; font-weight: 600;
+}
+.masthead__meta { margin: .3rem 0 0; color: var(--ink-faint); font-size: .95rem; }
+.masthead__summary { margin: 1.1rem 0 0; max-width: var(--measure); color: var(--ink-dim); }
+.masthead__links { margin-top: .9rem; display: flex; flex-wrap: wrap; gap: 1.1rem; }
+.masthead__actions { margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: .75rem; }
+.masthead__aside { margin: .8rem 0 0; font-size: .85rem; color: var(--ink-faint); font-style: italic; }
+
+.r-section { margin-top: clamp(2.2rem, 5vw, 3.4rem); }
+.r-section__head {
+  margin: 0 0 1.4rem; padding-bottom: .5rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.r-entry { margin-bottom: 2.1rem; }
+.r-entry__top {
+  display: flex; flex-wrap: wrap; gap: .2rem 1rem;
+  align-items: baseline; justify-content: space-between;
+}
+.r-entry__title { margin: 0; font-size: 1.32rem; font-weight: 700; letter-spacing: -.01em; }
+.r-entry__dates { color: var(--ink-faint); font-size: .9rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.r-entry__sub { margin: .12rem 0 0; color: var(--ink-dim); font-size: .95rem; }
+
+.r-role { margin-top: 1.15rem; padding-left: 1rem; border-left: 2px solid var(--rule); }
+.r-role__top { display: flex; flex-wrap: wrap; gap: .1rem .9rem; align-items: baseline; justify-content: space-between; }
+.r-role__title { margin: 0; font-size: 1.02rem; font-weight: 650; color: #cdeedd; }
+.r-role__dates { color: var(--ink-faint); font-size: .84rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.r-bullets { margin: .55rem 0 0; padding-left: 1.15rem; max-width: var(--measure); }
+.r-bullets li { margin-bottom: .5rem; color: var(--ink-dim); }
+.r-bullets li::marker { color: var(--jungle-500); }
+
+.r-groups { margin: 0; display: grid; gap: .85rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.r-group__name { margin: 0; font-size: .74rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); }
+.r-group__items { margin: .4rem 0 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.r-tag {
+  border: 1px solid var(--rule); border-radius: 999px;
+  padding: .22rem .7rem; font-size: .86rem; color: var(--ink-dim);
+  background: rgba(255,255,255,.04);
+}
+
+.site-footer {
+  margin-top: 4rem; padding: 1.6rem 0 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-faint); font-size: .87rem; max-width: var(--measure);
+}
+
+
+/* ==========================================================================
+   VIEW 2 — the jungle
+   ========================================================================== */
+
+.view--jungle { position: fixed; inset: 0; overflow: hidden; background: var(--jungle-900); }
+
+.stage-scroll {
+  position: absolute; inset: 0;
+  overflow-x: auto; overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.stage {
+  position: relative;
+  height: 100%;
+  /* 16:9 minimum. On a narrow phone this is wider than the screen, so the
+     jungle becomes something you swipe through — which is the point. */
+  width: max(100%, calc(100dvh * 16 / 9));
+}
+
+.layer {
+  position: absolute; inset: 0;
+  transform-origin: var(--fx, 50%) var(--fy, 50%);
+  will-change: transform;
+}
+.layer__inner { position: absolute; inset: 0; will-change: transform; }
+.layer svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.layer--far { filter: saturate(.75) brightness(.8); }
+.layer--near { filter: saturate(.92) brightness(.72); }
+/* Decorative layers paint above the beach; without this the near-layer fronds
+   and far-layer vines would swallow clicks meant for the surfer. */
+.layer--sky, .layer--far, .layer--near { pointer-events: none; }
+
+.vignette {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 78% 72% at 50% 46%, transparent 40%, rgba(4,20,12,.62) 100%);
+}
+
+/* ── the dolly-in / dolly-out ────────────────────────────────────────── */
+.stage.is-diving .layer { transition: transform var(--dolly-ms) cubic-bezier(.55,0,.62,.2), opacity var(--dolly-ms) ease-in, filter var(--dolly-ms); }
+.stage.is-diving .layer--sky   { transform: scale(1.18); }
+.stage.is-diving .layer--beach { transform: scale(1.34); }
+.stage.is-diving .layer--far   { transform: scale(1.7); }
+.stage.is-diving .layer--mid   { transform: scale(2.6); }
+.stage.is-diving .layer--near  { transform: scale(5.2); opacity: 0; filter: blur(14px); }
+.stage.is-diving .vignette     { opacity: 0; transition: opacity var(--dolly-ms); }
+/* .is-warp = jump straight to the zoomed state with no animation, so that
+   removing it animates the camera back OUT. */
+.stage.is-warp .layer { transition: none !important; }
+
+/* ── hotspots ────────────────────────────────────────────────────────── */
+.hot { cursor: pointer; --p: 0; }
+.hot__hit { pointer-events: all; }
+
+.crt {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  transform:
+    translate(calc(var(--p) * var(--dx, 40px)), calc(var(--p) * var(--dy, -12px)))
+    rotate(calc(var(--p) * var(--dr, -4deg)));
+}
+
+.chip {
+  opacity: calc(var(--p) * var(--p));
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  transform: translateY(calc((1 - var(--p)) * 10px)) scale(calc(.9 + var(--p) * .1));
+  pointer-events: none;
+}
+.chip__bg { fill: rgba(7, 30, 19, .88); stroke: rgba(159,230,196,.5); stroke-width: 1.5; }
+.chip__tx {
+  fill: #d9f6e6; font-family: var(--font); font-size: 19px; font-weight: 700;
+  text-anchor: middle; letter-spacing: .01em;
+}
+
+/* idle life — slow breathing, so the scene reads as inhabited */
+.crt--trex  { animation: breathe 5.5s ease-in-out infinite; }
+.crt--trike { animation: breathe 6.4s ease-in-out infinite .8s; }
+.crt--stego { animation: breathe 7.1s ease-in-out infinite .4s; }
+.crt--maia  { animation: breathe 6.8s ease-in-out infinite 1.2s; }
+.crt--compy { animation: skitter 3.6s ease-in-out infinite; }
+.crt--ptero { animation: bobble 4.4s ease-in-out infinite; }
+.crt--surfer{ animation: bobble 3.2s ease-in-out infinite; }
+
+@keyframes breathe { 0%,100% { translate: 0 0 } 50% { translate: 0 -3px } }
+@keyframes skitter { 0%,100% { translate: 0 0 } 25% { translate: 3px -2px } 60% { translate: -2px 0 } }
+@keyframes bobble  { 0%,100% { rotate: 0deg } 50% { rotate: -2.5deg } }
+
+.pupil { animation: blink 6.2s steps(1, end) infinite; }
+@keyframes blink { 0%, 96%, 100% { opacity: 1 } 97%, 99% { opacity: 0 } }
+
+.surf-wave { animation: swell 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
+@keyframes swell { 0%,100% { transform: scaleY(1) } 50% { transform: scaleY(1.35) } }
+
+.hatch { animation: skitter 2.8s ease-in-out infinite 1s; transform-box: fill-box; }
+
+/* ── HUD ─────────────────────────────────────────────────────────────── */
+.hud {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 1.1rem clamp(1rem, 3vw, 2rem) clamp(1.1rem, 3vw, 1.8rem);
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  pointer-events: none;
+  background: linear-gradient(transparent, rgba(4,20,12,.7));
+}
+.hud > * { pointer-events: auto; }
+.hud__hint {
+  margin: 0; font-size: .9rem; color: rgba(255,255,255,.8);
+  background: rgba(6,25,16,.55); backdrop-filter: blur(6px);
+  padding: .5rem .9rem; border-radius: 999px;
+}
+
+
+/* ==========================================================================
+   VIEW 3 — a clearing
+   ========================================================================== */
+
+.view--clearing { min-height: 100dvh; }
+.clearing { padding: clamp(1.5rem, 5vw, 3rem) 0 4rem; animation: rise 420ms cubic-bezier(.2,.7,.3,1) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: none } }
+
+.clearing__creature {
+  margin: 1.8rem 0 .2rem; font-size: .76rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint);
+}
+.clearing__blurb {
+  margin: .1rem 0 1.9rem; font-style: italic; color: #9fe6c4;
+  max-width: var(--measure);
+}
+#clearing-body:focus { outline: none; }
+
+.clearing__nav {
+  margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule);
+  display: flex; flex-wrap: wrap; gap: .55rem; align-items: center;
+}
+.clearing__nav-label { font-size: .8rem; color: var(--ink-faint); margin-right: .35rem; width: 100%; }
+.clearing__nav a {
+  font-size: .9rem; padding: .38rem .85rem; border-radius: 999px;
+  border: 1px solid var(--rule); text-decoration: none; color: var(--ink-dim);
+}
+.clearing__nav a:hover { border-color: rgba(255,255,255,.4); color: var(--ink); }
+.clearing__nav a[aria-current="page"] { background: var(--jungle-500); color: #062315; border-color: transparent; font-weight: 650; }
+
+.clearing__links { margin-top: 1.4rem; display: flex; flex-wrap: wrap; gap: .75rem; }
+
+
+/* ==========================================================================
+   Reduced motion — no parallax, no dolly, everyone fully visible
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .crt, .chip, .pupil, .surf-wave, .hatch { animation: none !important; }
+  .crt { transform: translate(var(--dx, 40px), var(--dy, -12px)) !important; }
+  .chip { opacity: 1 !important; transform: none !important; }
+  .stage.is-diving .layer { transition: none !important; transform: none !important; opacity: 1 !important; filter: none !important; }
+  .layer__inner { transform: none !important; }
+  .clearing { animation: none; }
+  .btn { transition: none; }
+}
+
+/* Touch devices get no hover, so everyone idle-peeks on a stagger instead. */
+@media (hover: none) {
+  .crt { animation: peekloop 9s ease-in-out infinite; }
+  .crt--trike { animation-delay: 1.3s } .crt--stego { animation-delay: 2.6s }
+  .crt--compy { animation-delay: 3.9s } .crt--maia  { animation-delay: 5.2s }
+  .crt--ptero { animation-delay: 6.5s } .crt--surfer{ animation-delay: 7.8s }
+  @keyframes peekloop {
+    0%, 74%, 100% { translate: 0 0 }
+    82%, 92%      { translate: var(--dx, 40px) var(--dy, -12px) }
+  }
+  .chip { opacity: .92; transform: none; }
+}
+
+
+/* ==========================================================================
+   Print — dark-on-white, no jungle, no chrome
+   ========================================================================== */
+@media print {
+  body { background: #fff !important; color: #111; font-size: 10.5pt; line-height: 1.42; }
+  .view--jungle, .view--clearing, .masthead__actions, .masthead__aside,
+  .skip, .sprite, .site-footer a { display: none !important; }
+  .view--plain { display: block !important; }
+  .wrap { width: 100%; }
+  .masthead { padding: 0 0 .5rem; }
+  .masthead__eyebrow { display: none; }
+  .masthead__name { font-size: 22pt; }
+  .masthead__headline { color: #1a5c3a; font-size: 11pt; }
+  .masthead__meta, .masthead__summary { color: #333; }
+  .masthead__links { gap: .8rem; font-size: 9pt; }
+  a { color: #111; text-decoration: none; }
+  .r-section { margin-top: 1.1rem; break-inside: avoid; }
+  .r-section__head { color: #555; border-color: #bbb; margin-bottom: .7rem; }
+  .r-entry { margin-bottom: .9rem; break-inside: avoid; }
+  .r-entry__title { font-size: 12.5pt; }
+  .r-entry__dates, .r-role__dates, .r-entry__sub { color: #444; }
+  .r-role { margin-top: .5rem; border-color: #ccc; }
+  .r-role__title { color: #1a5c3a; }
+  .r-bullets li { color: #222; margin-bottom: .18rem; }
+  .r-tag { border-color: #bbb; color: #222; background: none; }
+  .site-footer { border-color: #bbb; color: #666; margin-top: 1.2rem; padding: .6rem 0 0; font-size: 8pt; }
+}
+
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }

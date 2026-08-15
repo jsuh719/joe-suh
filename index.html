@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joseph Suh — Resume</title>
+<meta name="description" content="Resume of Joseph Suh — Senior Mission Software Engineer (FDE) at Scale AI. Read it straight, or go find it in the jungle.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129429;</text></svg>">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     SVG sprite: shared leaf / fern shapes. Never rendered directly.
+     ═══════════════════════════════════════════════════════════════════ -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="leaf" viewBox="0 0 260 100" overflow="visible">
+    <path d="M 4,50 C 70,2 190,4 254,44 C 190,94 70,96 4,50 Z" fill="currentColor"/>
+    <path d="M 10,50 C 80,43 180,43 250,45" stroke="rgba(0,0,0,.20)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <g stroke="rgba(0,0,0,.14)" stroke-width="3" fill="none" stroke-linecap="round">
+      <path d="M 58,47 L 44,19"/><path d="M 100,44 L 90,15"/><path d="M 142,44 L 136,15"/><path d="M 184,46 L 182,20"/>
+      <path d="M 58,53 L 46,81"/><path d="M 100,56 L 92,85"/><path d="M 142,56 L 138,85"/><path d="M 184,54 L 184,80"/>
+    </g>
+  </symbol>
+
+  <symbol id="fern" viewBox="0 0 200 120" overflow="visible">
+    <path d="M 4,112 C 52,102 122,72 196,10" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <g fill="currentColor">
+      <ellipse cx="30"  cy="98"  rx="26" ry="9"   transform="rotate(-28 30 98)"/>
+      <ellipse cx="62"  cy="86"  rx="24" ry="8.5" transform="rotate(-33 62 86)"/>
+      <ellipse cx="94"  cy="70"  rx="22" ry="8"   transform="rotate(-38 94 70)"/>
+      <ellipse cx="124" cy="52"  rx="19" ry="7.5" transform="rotate(-42 124 52)"/>
+      <ellipse cx="152" cy="34"  rx="16" ry="7"   transform="rotate(-46 152 34)"/>
+      <ellipse cx="176" cy="18"  rx="12" ry="6"   transform="rotate(-50 176 18)"/>
+      <ellipse cx="34"  cy="113" rx="24" ry="8.5" transform="rotate(8 34 113)"/>
+      <ellipse cx="68"  cy="101" rx="22" ry="8"   transform="rotate(2 68 101)"/>
+      <ellipse cx="100" cy="85"  rx="20" ry="7.5" transform="rotate(-6 100 85)"/>
+      <ellipse cx="130" cy="67"  rx="17" ry="7"   transform="rotate(-12 130 67)"/>
+    </g>
+  </symbol>
+</svg>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     VIEW 1 — the plain resume. Default. Scannable. Printable.
+     ═══════════════════════════════════════════════════════════════════ -->
+<div class="view view--plain" id="view-plain">
+
+  <header class="masthead">
+    <div class="wrap">
+      <p class="masthead__eyebrow">Resume</p>
+      <h1 class="masthead__name" id="r-name">Joseph Suh</h1>
+      <p class="masthead__headline" id="r-headline"></p>
+      <p class="masthead__meta"><span id="r-location"></span></p>
+      <p class="masthead__summary" id="r-summary"></p>
+      <nav class="masthead__links" id="r-links" aria-label="Elsewhere"></nav>
+
+      <div class="masthead__actions">
+        <a class="btn btn--primary" href="#/jungle" data-nav>
+          <span aria-hidden="true">&#129429;</span> Take the jungle route
+        </a>
+        <button class="btn" type="button" id="btn-print">Print / Save as PDF</button>
+      </div>
+      <p class="masthead__aside">
+        Same resume either way. One of them has dinosaurs in it.
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap" id="main">
+    <div id="r-body"></div>
+  </main>
+
+  <footer class="site-footer wrap">
+    <p>
+      Built by hand with a coding agent — vanilla HTML, CSS and JavaScript.
+      No framework, no build step, no dependencies. All the content lives in one
+      editable data file.
+      <a href="https://github.com/jsuh719/joe-suh">Source on GitHub</a>.
+    </p>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     VIEW 2 — the jungle. Seven inhabitants, all hiding.
+     ═══════════════════════════════════════════════════════════════════ -->
+<div class="view view--jungle" id="view-jungle" hidden>
+
+  <div class="stage-scroll" id="stage-scroll">
+  <div class="stage" id="stage">
+
+    <!-- ───────── layer 0 — sky + ocean ───────── -->
+    <div class="layer layer--sky"><div class="layer__inner">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0"   stop-color="#5fc2dd"/>
+            <stop offset=".55" stop-color="#a9e2ee"/>
+            <stop offset="1"   stop-color="#f3e6c6"/>
+          </linearGradient>
+          <linearGradient id="g-sea" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#12658c"/>
+            <stop offset="1" stop-color="#3aa9c4"/>
+          </linearGradient>
+        </defs>
+        <rect width="1600" height="900" fill="url(#g-sky)"/>
+        <circle cx="1010" cy="208" r="66" fill="#fff6d4" opacity=".8"/>
+        <g fill="#ffffff" opacity=".5">
+          <ellipse cx="742" cy="196" rx="86" ry="24"/>
+          <ellipse cx="800" cy="184" rx="54" ry="19"/>
+          <ellipse cx="1188" cy="164" rx="70" ry="20"/>
+          <ellipse cx="1232" cy="176" rx="48" ry="16"/>
+        </g>
+        <rect x="0" y="452" width="1600" height="158" fill="url(#g-sea)"/>
+      </svg>
+    </div></div>
+
+    <!-- ───────── layer 1 — beach + THE SURFER ───────── -->
+    <div class="layer layer--beach"><div class="layer__inner">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <g stroke="#8ad6e6" stroke-width="6" fill="none" opacity=".7" stroke-linecap="round" aria-hidden="true">
+          <path d="M 706,566 q 62,-11 124,0"/>
+          <path d="M 1128,548 q 70,-12 140,0"/>
+          <path d="M 880,588 q 62,-11 124,0"/>
+        </g>
+        <path d="M 0,600 Q 400,584 800,596 T 1600,588 L 1600,720 L 0,720 Z" fill="#f0dcae" aria-hidden="true"/>
+        <path d="M 0,600 Q 400,584 800,596 T 1600,588" stroke="#ffffff" stroke-width="9" fill="none" opacity=".75" stroke-linecap="round" aria-hidden="true"/>
+
+        <!-- ····· SURFER — "Off the clock" ····· -->
+        <g class="hot" data-slug="surfer" data-dx="-24" data-dy="-8" data-dr="-9"
+           tabindex="0" role="button" aria-label="Off the clock — about me and where to find me">
+          <rect class="hot__hit" x="812" y="398" width="240" height="192" fill="transparent"/>
+          <path class="surf-wave" d="M 852,540 q 66,-40 128,-6 q -60,-8 -128,6 z" fill="#79cee2" aria-hidden="true"/>
+          <g class="crt crt--surfer" aria-hidden="true">
+            <g transform="translate(876,424) scale(.82)">
+              <ellipse cx="100" cy="150" rx="48" ry="9" fill="#f6e6c4" transform="rotate(-12 100 150)"/>
+              <path d="M 100,148 L 100,114" stroke="#26364e" stroke-width="12" stroke-linecap="round"/>
+              <circle cx="100" cy="101" r="10" fill="#26364e"/>
+              <path d="M 100,122 L 74,110" stroke="#26364e" stroke-width="7.5" stroke-linecap="round"/>
+              <path d="M 100,122 L 126,113" stroke="#26364e" stroke-width="7.5" stroke-linecap="round"/>
+            </g>
+          </g>
+          <g class="chip" transform="translate(818,394)">
+            <rect class="chip__bg" x="0" y="0" width="150" height="40" rx="20"/>
+            <text class="chip__tx" x="75" y="26">Off the clock</text>
+          </g>
+        </g>
+      </svg>
+    </div></div>
+
+    <!-- ───────── layer 2 — far canopy, hazy ───────── -->
+    <div class="layer layer--far"><div class="layer__inner">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <!-- hazy mid-distance trunks inside the gap -->
+        <g fill="#37694c" opacity=".55">
+          <path d="M 596,150 L 628,150 C 624,400 632,650 634,900 L 590,900 C 594,650 600,400 596,150 Z"/>
+          <path d="M 1180,180 L 1206,180 C 1204,420 1210,660 1212,900 L 1174,900 C 1178,660 1182,420 1180,180 Z"/>
+        </g>
+        <!-- tree masses left / right / canopy -->
+        <g fill="#2b5c40">
+          <path d="M 0,0 L 336,0 C 320,124 302,244 310,364 C 318,474 300,566 304,900 L 0,900 Z"/>
+          <path d="M 1600,0 L 1296,0 C 1308,134 1330,252 1320,382 C 1310,502 1330,602 1324,900 L 1600,900 Z"/>
+          <path d="M 0,0 L 1600,0 L 1600,148 C 1400,206 1242,118 1080,166 C 918,214 780,108 620,156 C 460,204 198,138 0,188 Z"/>
+        </g>
+        <!-- blobby leaf clumps to break up the silhouette -->
+        <g fill="#2b5c40">
+          <circle cx="326" cy="196" r="59"/><circle cx="298" cy="284" r="37"/>
+          <circle cx="332" cy="366" r="54"/><circle cx="294" cy="442" r="33"/>
+          <circle cx="324" cy="528" r="63"/><circle cx="302" cy="622" r="41"/>
+          <circle cx="330" cy="708" r="47"/><circle cx="298" cy="786" r="56"/>
+          <circle cx="1300" cy="214" r="51"/><circle cx="1334" cy="298" r="36"/>
+          <circle cx="1304" cy="390" r="61"/><circle cx="1336" cy="476" r="34"/>
+          <circle cx="1302" cy="564" r="45"/><circle cx="1332" cy="650" r="58"/>
+          <circle cx="1306" cy="736" r="39"/><circle cx="1334" cy="812" r="53"/>
+          <circle cx="188" cy="182" r="64"/><circle cx="392" cy="146" r="43"/>
+          <circle cx="558" cy="160" r="57"/><circle cx="726" cy="138" r="38"/>
+          <circle cx="892" cy="178" r="61"/><circle cx="1064" cy="144" r="42"/>
+          <circle cx="1236" cy="164" r="55"/>
+        </g>
+        <!-- hanging vines -->
+        <g stroke="#2b5c40" stroke-width="7" fill="none" stroke-linecap="round" opacity=".9">
+          <path d="M 470,120 C 462,240 486,320 476,430"/>
+          <path d="M 1128,140 C 1120,260 1142,340 1132,452"/>
+          <path d="M 802,100 C 796,190 812,250 806,330"/>
+        </g>
+      </svg>
+    </div></div>
+
+    <!-- ───────── layer 3 — MID: the dinosaurs ───────── -->
+    <div class="layer layer--mid"><div class="layer__inner">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+        <!-- jungle floor: drawn first, so it hides the distant sand and the
+             inhabitants stand in front of it -->
+        <g aria-hidden="true">
+          <path d="M 0,900 L 0,724 C 170,684 336,730 512,708 C 688,686 852,728 1032,706 C 1212,684 1400,730 1600,700 L 1600,900 Z" fill="#1d4f34"/>
+          <path d="M 0,900 L 0,796 C 210,768 380,808 560,788 C 740,768 900,806 1090,786 C 1280,766 1430,802 1600,780 L 1600,900 Z" fill="#173f29"/>
+        </g>
+
+        <!-- full-height trunks -->
+        <g aria-hidden="true">
+          <path d="M 384,0 L 454,0 C 444,300 460,600 466,900 L 372,900 C 382,600 396,300 384,0 Z" fill="#4a3826"/>
+          <path d="M 1042,0 L 1098,0 C 1090,300 1104,600 1110,900 L 1032,900 C 1042,600 1054,300 1042,0 Z" fill="#54402c"/>
+          <path d="M 694,0 L 738,0 C 732,300 744,600 748,900 L 684,900 C 690,600 702,300 694,0 Z" fill="#3f2f1e" opacity=".92"/>
+        </g>
+
+        <!-- ····· TRICERATOPS — Scenera ····· -->
+        <g class="hot" data-slug="scenera" data-dx="58" data-dy="-16" data-dr="-4"
+           tabindex="0" role="button" aria-label="Scenera, Inc — 2022 to 2024">
+          <rect class="hot__hit" x="110" y="350" width="330" height="270" fill="transparent"/>
+          <g class="crt crt--trike" aria-hidden="true">
+            <g transform="translate(146,376)">
+              <path d="M 110,116 C 76,126 50,158 42,200" stroke="#3f9aa8" stroke-width="50" stroke-linecap="round" fill="none"/>
+              <ellipse cx="118" cy="86" rx="48" ry="54" fill="#2f7f8c"/>
+              <g fill="#2f7f8c">
+                <circle cx="84" cy="46" r="7"/><circle cx="72" cy="78" r="7"/>
+                <circle cx="76" cy="112" r="7"/><circle cx="104" cy="34" r="7"/>
+              </g>
+              <path d="M 112,58 L 176,66 q 26,4 26,22 q 0,20 -26,24 L 112,120 z" fill="#3f9aa8"/>
+              <path d="M 150,60 q 6,-30 30,-40 q -8,26 -16,42 z" fill="#efe3bd"/>
+              <path d="M 128,58 q 2,-28 22,-40 q -6,26 -12,40 z" fill="#e2d4ac"/>
+              <path d="M 186,72 q 4,-14 14,-18 q -2,14 -6,20 z" fill="#efe3bd"/>
+              <path d="M 198,84 q 14,6 10,18 q -13,2 -19,-8 z" fill="#e8d9a8"/>
+              <circle cx="156" cy="90" r="9" fill="#fff"/>
+              <circle class="pupil" cx="159" cy="91" r="5" fill="#123f46"/>
+            </g>
+          </g>
+          <g class="occ" aria-hidden="true">
+            <use href="#leaf" x="0" y="0" width="250" height="96" transform="translate(96,506) rotate(-5)" style="color:#2f7a4d"/>
+          </g>
+          <g class="chip" transform="translate(178,352)">
+            <rect class="chip__bg" x="0" y="0" width="122" height="40" rx="20"/>
+            <text class="chip__tx" x="61" y="26">Scenera</text>
+          </g>
+        </g>
+
+        <!-- ····· T. REX — Scale AI ····· -->
+        <g class="hot" data-slug="scale-ai" data-dx="82" data-dy="-24" data-dr="-5"
+           tabindex="0" role="button" aria-label="Scale AI — 2024 to present, current role">
+          <rect class="hot__hit" x="452" y="272" width="410" height="330" fill="transparent"/>
+          <g class="crt crt--trex" aria-hidden="true">
+            <g transform="translate(474,286) scale(1.42)">
+              <path d="M 92,134 q 24,6 28,26" stroke="#2a6f46" stroke-width="15" stroke-linecap="round" fill="none"/>
+              <path d="M 118,92 C 78,100 48,138 38,200" stroke="#38945c" stroke-width="52" stroke-linecap="round" fill="none"/>
+              <rect x="112" y="98" width="80" height="26" rx="12" fill="#2a6f46"/>
+              <rect x="98" y="46" width="98" height="58" rx="24" fill="#38945c"/>
+              <path d="M 128,58 q 18,-11 36,-2" stroke="#2a6f46" stroke-width="9" stroke-linecap="round" fill="none"/>
+              <circle cx="150" cy="75" r="10.5" fill="#fff"/>
+              <circle class="pupil" cx="153" cy="76" r="5.5" fill="#143722"/>
+              <ellipse cx="186" cy="66" rx="4.5" ry="3.2" fill="#1c5233"/>
+              <path d="M 150,102 l 7,0 l -3.5,11 z M 166,102 l 7,0 l -3.5,12 z M 182,102 l 7,0 l -3.5,9 z" fill="#fff"/>
+            </g>
+          </g>
+          <!-- covers the neck and the back of the skull; snout stays out in the
+               open so there is something to recognise before you get close -->
+          <g class="occ" aria-hidden="true">
+            <use href="#leaf" x="0" y="0" width="320" height="123" transform="translate(392,406) rotate(-7)" style="color:#2f7a4d"/>
+            <use href="#leaf" x="0" y="0" width="280" height="108" transform="translate(452,520) rotate(6)" style="color:#276a41"/>
+          </g>
+          <g class="chip" transform="translate(566,272)">
+            <rect class="chip__bg" x="0" y="0" width="126" height="40" rx="20"/>
+            <text class="chip__tx" x="63" y="26">Scale AI</text>
+          </g>
+        </g>
+
+        <!-- ····· COMPY PACK — Skills ····· -->
+        <g class="hot" data-slug="skills" data-dx="30" data-dy="-16" data-dr="-6"
+           tabindex="0" role="button" aria-label="Technical skills">
+          <rect class="hot__hit" x="748" y="604" width="266" height="210" fill="transparent"/>
+          <g class="crt crt--compy" aria-hidden="true">
+            <g transform="translate(756,636) scale(.58)">
+              <path d="M 40,180 C 46,140 70,120 96,116" stroke="#a8cf4a" stroke-width="30" stroke-linecap="round" fill="none"/>
+              <ellipse cx="118" cy="110" rx="30" ry="24" fill="#bcdf5e"/>
+              <path d="M 142,104 L 188,112 L 142,120 z" fill="#bcdf5e"/>
+              <circle cx="124" cy="104" r="9" fill="#fff"/>
+              <circle class="pupil" cx="127" cy="105" r="5" fill="#2b3c0c"/>
+            </g>
+            <g transform="translate(846,676) scale(.46)">
+              <path d="M 40,180 C 46,140 70,120 96,116" stroke="#96bd3c" stroke-width="30" stroke-linecap="round" fill="none"/>
+              <ellipse cx="118" cy="110" rx="30" ry="24" fill="#abd150"/>
+              <path d="M 142,104 L 188,112 L 142,120 z" fill="#abd150"/>
+              <circle cx="124" cy="104" r="9" fill="#fff"/>
+              <circle class="pupil" cx="127" cy="105" r="5" fill="#2b3c0c"/>
+            </g>
+            <g transform="translate(896,624) scale(.4)">
+              <path d="M 40,180 C 46,140 70,120 96,116" stroke="#8bb034" stroke-width="30" stroke-linecap="round" fill="none"/>
+              <ellipse cx="118" cy="110" rx="30" ry="24" fill="#a0c748"/>
+              <path d="M 142,104 L 188,112 L 142,120 z" fill="#a0c748"/>
+              <circle cx="124" cy="104" r="9" fill="#fff"/>
+              <circle class="pupil" cx="127" cy="105" r="5" fill="#2b3c0c"/>
+            </g>
+          </g>
+          <g class="occ" aria-hidden="true" style="color:#2c6b45">
+            <use href="#fern" x="0" y="0" width="240" height="144" transform="translate(736,714)"/>
+            <use href="#fern" x="0" y="0" width="200" height="120" transform="translate(1016,748) scale(-1,1) translate(-200,0)"/>
+          </g>
+          <g class="chip" transform="translate(796,600)">
+            <rect class="chip__bg" x="0" y="0" width="104" height="40" rx="20"/>
+            <text class="chip__tx" x="52" y="26">Skills</text>
+          </g>
+        </g>
+
+        <!-- ····· MAIASAURA + HATCHLINGS — Mentorship ····· -->
+        <g class="hot" data-slug="mentorship" data-dx="46" data-dy="-16" data-dr="-3"
+           tabindex="0" role="button" aria-label="Mentorship — ANA Female Tactical Platoon">
+          <rect class="hot__hit" x="226" y="578" width="320" height="240" fill="transparent"/>
+          <g class="crt crt--maia" aria-hidden="true">
+            <g transform="translate(248,596) scale(1.04)">
+              <path d="M 24,200 C 30,152 62,126 104,124" stroke="#9b7fbf" stroke-width="50" stroke-linecap="round" fill="none"/>
+              <rect x="98" y="106" width="70" height="38" rx="18" fill="#9b7fbf"/>
+              <path d="M 160,116 q 34,4 34,16 q 0,12 -34,12 z" fill="#c9b3e0"/>
+              <circle cx="126" cy="120" r="8" fill="#fff"/>
+              <circle class="pupil" cx="129" cy="121" r="4.5" fill="#382851"/>
+              <ellipse cx="150" cy="186" rx="15" ry="19" fill="#f2e9d8"/>
+              <g class="hatch">
+                <ellipse cx="186" cy="178" rx="15" ry="13" fill="#c9b3e0"/>
+                <path d="M 198,174 l 21,4 l -21,5 z" fill="#c9b3e0"/>
+                <circle cx="190" cy="174" r="5" fill="#fff"/>
+                <circle cx="192" cy="175" r="2.6" fill="#382851"/>
+              </g>
+            </g>
+          </g>
+          <g class="occ" aria-hidden="true" style="color:#22603c">
+            <use href="#fern" x="0" y="0" width="290" height="174" transform="translate(206,764)"/>
+          </g>
+          <g class="chip" transform="translate(266,580)">
+            <rect class="chip__bg" x="0" y="0" width="148" height="40" rx="20"/>
+            <text class="chip__tx" x="74" y="26">Mentorship</text>
+          </g>
+        </g>
+
+        <!-- ····· STEGOSAURUS — US Army ····· -->
+        <g class="hot" data-slug="army" data-dx="-58" data-dy="-16" data-dr="4"
+           tabindex="0" role="button" aria-label="US Army — 2016 to 2022">
+          <rect class="hot__hit" x="1140" y="486" width="300" height="280" fill="transparent"/>
+          <g class="crt crt--stego" aria-hidden="true">
+            <g transform="translate(1400,516) scale(-1.16,1.16)">
+              <path d="M 30,200 C 22,142 60,110 110,114" stroke="#8a9a5b" stroke-width="56" stroke-linecap="round" fill="none"/>
+              <path d="M 16,178 q 0,-32 20,-46 q 5,28 0,46 z" fill="#b0904e"/>
+              <path d="M 46,142 q 6,-34 30,-44 q -1,28 -10,44 z" fill="#c2a25a"/>
+              <path d="M 80,118 q 8,-32 32,-40 q -4,28 -12,42 z" fill="#d4b268"/>
+              <path d="M 112,112 C 140,106 160,98 176,94" stroke="#8a9a5b" stroke-width="34" stroke-linecap="round" fill="none"/>
+              <rect x="158" y="76" width="46" height="34" rx="16" fill="#8a9a5b"/>
+              <circle cx="182" cy="90" r="7" fill="#fff"/>
+              <circle class="pupil" cx="184" cy="91" r="4" fill="#2c371a"/>
+            </g>
+          </g>
+          <g class="occ" aria-hidden="true">
+            <use href="#fern" x="0" y="0" width="250" height="150" transform="translate(1404,676) scale(-1,1) translate(-250,0)" style="color:#2a6742"/>
+            <use href="#leaf" x="0" y="0" width="230" height="88" transform="translate(1150,692) rotate(6)" style="color:#2f7a4d"/>
+          </g>
+          <g class="chip" transform="translate(1224,488)">
+            <rect class="chip__bg" x="0" y="0" width="122" height="40" rx="20"/>
+            <text class="chip__tx" x="61" y="26">US Army</text>
+          </g>
+        </g>
+
+        <!-- ····· PTERODACTYL — West Point ····· -->
+        <g class="hot" data-slug="west-point" data-dx="-46" data-dy="22" data-dr="5"
+           tabindex="0" role="button" aria-label="West Point — B.S. in Computer Science, 2016">
+          <rect class="hot__hit" x="1128" y="46" width="310" height="260" fill="transparent"/>
+          <path d="M 1600,252 C 1450,242 1300,266 1128,258" stroke="#54402c" stroke-width="18" fill="none" stroke-linecap="round" aria-hidden="true"/>
+          <g class="crt crt--ptero" aria-hidden="true">
+            <g transform="translate(1156,66) scale(1.14)">
+              <path d="M 60,120 C 40,80 70,56 104,64 L 96,124 z" fill="#c9642f"/>
+              <path d="M 96,132 C 88,104 100,80 122,74" stroke="#e07a3c" stroke-width="42" stroke-linecap="round" fill="none"/>
+              <path d="M 96,148 l 0,22 M 114,148 l 0,22" stroke="#a8501f" stroke-width="7" stroke-linecap="round"/>
+              <ellipse cx="132" cy="70" rx="26" ry="22" fill="#e07a3c"/>
+              <path d="M 124,52 q -10,-30 -44,-34 q 25,26 32,42 z" fill="#f2a05a"/>
+              <path d="M 150,64 L 208,74 L 150,84 z" fill="#f7cb8d"/>
+              <circle cx="137" cy="64" r="8" fill="#fff"/>
+              <circle class="pupil" cx="140" cy="65" r="4.5" fill="#4a2210"/>
+            </g>
+          </g>
+          <g class="occ" aria-hidden="true">
+            <use href="#leaf" x="0" y="0" width="270" height="104" transform="translate(1352,26) rotate(22)" style="color:#2c7048"/>
+          </g>
+          <g class="chip" transform="translate(1160,282)">
+            <rect class="chip__bg" x="0" y="0" width="146" height="40" rx="20"/>
+            <text class="chip__tx" x="73" y="26">West Point</text>
+          </g>
+        </g>
+
+      </svg>
+    </div></div>
+
+    <!-- ───────── layer 4 — near foliage, you are standing here ───────── -->
+    <div class="layer layer--near"><div class="layer__inner">
+      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <use href="#leaf" x="0" y="0" width="500" height="192" transform="translate(-170,-80) rotate(22)" style="color:#164d31"/>
+        <use href="#leaf" x="0" y="0" width="440" height="169" transform="translate(-140,110) rotate(-18)" style="color:#12452c"/>
+        <use href="#leaf" x="0" y="0" width="520" height="200" transform="translate(1310,-50) rotate(152)" style="color:#164d31"/>
+        <use href="#leaf" x="0" y="0" width="450" height="173" transform="translate(1360,180) rotate(198)" style="color:#123f28"/>
+        <use href="#fern" x="0" y="0" width="500" height="300" transform="translate(-60,690)" style="color:#0f3d27"/>
+        <use href="#fern" x="0" y="0" width="540" height="324" transform="translate(1640,720) scale(-1,1) translate(-540,0)" style="color:#0f3d27"/>
+        <use href="#leaf" x="0" y="0" width="400" height="154" transform="translate(590,842) rotate(-7)" style="color:#0d3521"/>
+      </svg>
+    </div></div>
+
+    <div class="vignette" aria-hidden="true"></div>
+  </div>
+  </div>
+
+  <!-- HUD -->
+  <div class="hud">
+    <a class="btn btn--ghost" href="#/" data-nav>&larr; Plain resume</a>
+    <p class="hud__hint" id="hud-hint">Seven of them are hiding in here. Move your cursor around.</p>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     VIEW 3 — a clearing. You travelled here from the jungle.
+     ═══════════════════════════════════════════════════════════════════ -->
+<div class="view view--clearing" id="view-clearing" hidden>
+  <div class="clearing">
+    <div class="wrap">
+      <a class="btn btn--ghost" href="#/jungle" data-nav>&larr; Back to the jungle</a>
+      <div id="clearing-body" tabindex="-1"></div>
+      <nav class="clearing__nav" id="clearing-nav" aria-label="Other clearings"></nav>
+    </div>
+  </div>
+</div>
+
+<script src="./resume.js"></script>
+<script src="./main.js"></script>
+</body>
+</html>
