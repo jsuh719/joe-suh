@@ -1,6 +1,10 @@
 .DS_Store
 
-# Never commit the resume PDF: it carries a phone number and email address
-# in both its text and its metadata, which is exactly what this site keeps off
-# the public internet.
+# PDFs are ignored by default. The resume exports in ~/Documents/Work/Resumes
+# carry a phone number and email in both their text and their metadata, and this
+# site deliberately keeps those off the public internet.
+#
+# The single exception is the scrubbed copy the download button serves. Only put
+# a version with the contact details removed at that filename.
 *.pdf
+!Joe-Suh-Resume.pdf

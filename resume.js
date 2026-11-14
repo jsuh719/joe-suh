@@ -4,8 +4,13 @@
    Everything below is plain data. Both the plain resume view and the jungle
    clearings read from this one object, so you never edit content twice.
 
-   Every bullet is a plain string. No markdown, no HTML, no escaping rules.
-   Just type a sentence in quotes. Commas between items, no comma after the last.
+   Every bullet is a plain string. Just type a sentence in quotes, with commas
+   between items and no comma after the last one.
+
+   The one piece of markup bullets understand is a link, written the markdown
+   way -- square brackets for the words, round brackets for the address:
+       "Listed author of [the paper title](https://example.com/paper), 2014"
+   Anything outside the brackets is treated as literal text.
 
    To add a role to an existing job: add another {...} block to its "roles" list.
    To reorder anything: move the block up or down.
@@ -17,13 +22,25 @@
 
 window.RESUME = {
 
-  name: "Joseph Suh",
+  name: "Joe Suh",
+
+  /* The hero headline. {{JOB TITLE}} and {{COMPANY}} are filled in from the two
+     fields directly below, so when you change jobs you edit them in one place. */
+  currentTitle: "Senior Mission Software Engineer (FDE)",
+  currentCompany: "Scale AI",
+
+  hero: {
+    greeting: "Great to meet you!",
+    intro:
+      "I'm Joe Suh, and currently work as a {{JOB TITLE}} at {{COMPANY}}. " +
+      "After a stint as an infantry officer in the US Army, I've spent my career " +
+      "building AI platforms for sensitive use cases on regulated customer networks."
+  },
+
   location: "Arlington, VA",
   headline: "Senior Mission Software Engineer (FDE) at Scale AI",
   summary:
-    "Product and forward-deployed engineering leader working on AI agents, evals, " +
-    "and ML Ops for public sector customers. West Point CS, six years in the Army, " +
-    "then a decade of shipping technical products to hard customers.",
+    "Army Veteran | Product leader deploying AI to regulated industries",
 
   links: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/josephssuh/" },
@@ -38,29 +55,12 @@ window.RESUME = {
   categories: [
 
     {
-      slug: "skills",
-      section: "Technical Skills",
-      chip: "Skills",
-      title: "Technical Skills",
-      creature: "a pack of compsognathus",
-      blurb: "Quick, curious, travels in a group.",
-      groups: [
-        { name: "Product",  items: ["Figma", "Various Coding Agents", "Data Tools"] },
-        { name: "Software", items: ["Python", "Bash"] },
-        { name: "ML Ops",   items: ["Ray", "MLFlow", "KubeFlow"] },
-        { name: "DevOps",   items: ["Docker", "Kubernetes"] }
-      ]
-    },
-
-    {
       slug: "scale-ai",
       section: "Professional Experience",
       chip: "Scale AI",
       title: "Scale AI",
       subtitle: "Washington, DC",
       dates: "Jan 2024 – Present",
-      creature: "a Tyrannosaurus rex",
-      blurb: "The big one, center of frame, mostly behind a leaf.",
       roles: [
         {
           title: "Senior Mission Software Engineer (FDE)",
@@ -71,7 +71,7 @@ window.RESUME = {
         },
         {
           title: "Senior Product Manager",
-          dates: "Nov 2024 – May 2026",
+          dates: "Nov 2024 – Present",
           bullets: [
             "Led the Public Sector team's ML Ops and Frontier Data product suite, growing revenue by eight figures YoY, improving GM by 10%+, and securing an enterprise DoW contract worth nine figures",
             "Spearheaded 0-1 efforts for the AgentOps team, growing 400%+ YoY to seven figures, and improved customer-facing Agent performance by over 40% across multiple eight-figure contracts",
@@ -97,8 +97,6 @@ window.RESUME = {
       title: "Scenera, Inc",
       subtitle: "Palo Alto, CA (Remote)",
       dates: "Feb 2022 – Jan 2024",
-      creature: "a triceratops",
-      blurb: "Three horns, one frill, hiding in the ferns.",
       roles: [
         {
           title: "Director, Commercial Ops (FDE Lead)",
@@ -117,17 +115,23 @@ window.RESUME = {
       section: "Professional Experience",
       chip: "US Army",
       title: "US Army",
-      subtitle: "JFK Special Warfare Center & 25th Infantry Division — Fort Bragg, NC and Wahiawa, HI",
+      subtitle: "JFK Special Warfare Center, Fort Bragg, NC && 25th Infantry Division, Wahiawa, HI",
       dates: "May 2016 – Feb 2022",
-      creature: "a stegosaurus",
-      blurb: "Armor plated. Low and to the right.",
       roles: [
         {
-          title: "Special Projects Lead & Infantry Company Executive Officer",
-          dates: "May 2016 – Feb 2022",
+          title: "Special Projects Lead & Company Executive Officer",
+          dates: "",
           bullets: [
-            "Earned top 10% ratings from management, peers, and reports in 4 different roles across 2 organizations",
-            "Passed US Army Ranger School and was selected to attend the Special Forces Qualification Course"
+            "Revamped training curriculum and managed logistics for over 300 special operations students",
+            "Graudated US Army Ranger School and was a selected candidate after completing Special Forces Assessment and Selection"
+          ]
+        },
+        {
+          title: "Infantry Company Executive Officer and Platoon Leader",
+          dates: "",
+          bullets: [
+            "Earned top 10% ratings from management, peers, and reports in 3 different roles",
+            "Managed teams from 40 to 120 soldiers; oversaw military training, mentored junior leaders, and repeatedly led my units to be the top-perfoming teams in the organization"
           ]
         }
       ]
@@ -140,25 +144,10 @@ window.RESUME = {
       title: "United States Military Academy at West Point",
       subtitle: "B.S. in Computer Science — West Point, NY",
       dates: "May 2016",
-      creature: "a pterodactyl",
-      blurb: "Perched up in the canopy, watching everything.",
       bullets: [
         "Distinguished Graduate (top 15% of a class of 990 students), Dean's List, Commandant's List",
-        "Listed author of “On the Generality and Convenience of Etypes”, presented at IEEE LangSec 2014",
+        "Listed author of [“On the Generality and Convenience of Etypes”](https://ieeexplore.ieee.org/document/7163215/), presented at IEEE LangSec 2014",
         "Interned with the NSA and Lawrence Berkeley Labs in cryptography and supercomputer optimization"
-      ]
-    },
-
-    {
-      slug: "mentorship",
-      section: "Additional",
-      chip: "Mentorship",
-      title: "Mentorship",
-      subtitle: "ANA Female Tactical Platoon",
-      creature: "a maiasaura and her hatchlings",
-      blurb: "Maiasaura means “good mother lizard”. That one is on purpose.",
-      bullets: [
-        "Mentoring 4 Afghan Commandos from the ANA Female Tactical Platoon, along with their families, through emergency relocation to the US, navigation of the citizenship process, and cultural acclimatization"
       ]
     },
 
@@ -166,14 +155,13 @@ window.RESUME = {
       slug: "surfer",
       section: "Off the clock",
       chip: "Off the clock",
-      title: "Off the clock",
-      subtitle: "Out past the break",
-      creature: "a surfer",
-      blurb: "That speck out on the water is the whole reason this page has a beach in it.",
+      title: "Other Interests",
+      subtitle: "",
       bullets: [
-        "I surf. Badly, enthusiastically, and mostly on the wrong coast for it.",
-        "I built this page myself with a coding agent — no framework, no build step, no template. It seemed like a more honest way to say I'm comfortable with these tools than putting a line about it on a resume.",
-        "Best way to reach me is LinkedIn."
+        "Mentoring 4 Female Afghan Commandos and their families through relocating to the US, navigating of the citizenship process, and adjusting to life in America",
+        "Reading, cooking, and working out.",
+        "Surfing! I was stationed in Hawaii, but I'm not good at it by any means."
+        
       ],
       showLinks: true
     }
